@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://GFX/PNG/Man Red/manRed_stand.png" type="Texture" id=2]
@@ -9,6 +9,12 @@ custom_solver_bias = 0.0
 radius = 11.1282
 height = 21.8147
 
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = true
+cull_mode = 1
+polygon = PoolVector2Array( -10.797, -13.7261, -7.32588, -20.5106, 3.56088, -20.6684, 5.92757, -14.8306, 6.87424, -8.36164, 6.55869, -1.26158, 6.40091, 14.2008, 2.14087, 19.8808, -4.9592, 20.3542, -9.69257, 15.1475, -11.2704, -3.62827 )
+
 [node name="Character" type="KinematicBody2D"]
 
 input_pickable = false
@@ -16,9 +22,6 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -28,5 +31,10 @@ texture = ExtResource( 2 )
 
 position = Vector2( -1.73973, 0.115982 )
 shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
+
+occluder = SubResource( 2 )
+light_mask = 1
 
 
