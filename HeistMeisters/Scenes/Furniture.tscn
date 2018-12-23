@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
 
@@ -7,24 +7,24 @@
 custom_solver_bias = 0.0
 extents = Vector2( 21.7863, 20.2449 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=2]
 
 closed = false
 cull_mode = 1
 polygon = PoolVector2Array( -18.3624, -17.894, 17.2442, -16.6182, 18.52, 18.5244, -17.8984, 18.7564, -18.7103, -15.6903 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 27.2001, 29.213 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=4]
 
 closed = false
 cull_mode = 1
 polygon = PoolVector2Array( -28.8062, -21.5074, 20.2631, -30.1853, 29.5721, 19.1996, -19.4972, 29.1397, -28.4907, -18.1941 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 23.3705
@@ -35,7 +35,73 @@ closed = false
 cull_mode = 1
 polygon = PoolVector2Array( -12.8276, -11.2153, 6.26367, -17.3687, 15.0993, -16.2642, 21.2527, -9.6375, 19.9904, -2.69522, 17.3082, 3.77373, 12.1015, 11.1894, 5.31699, 13.8716, -1.15195, 12.136, -8.72537, 6.14042, -11.5654, -1.27521, -13.4587, -7.58637 )
 
-[node name="Furniture" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25.6966, 23.1626 )
+
+[sub_resource type="OccluderPolygon2D" id=13]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -27.5623, -19.2669, -23.2707, -23.3492, -18.7697, -24.7099, -10.6051, -20.837, -9.4537, -17.9061, 10.1203, -17.9061, 12.6325, -22.7211, 19.0176, -24.8146, 26.2401, -20.6276, 26.1354, 4.49411, 21.6345, 14.2288, 13.5746, 21.556, 5.09598, 24.9055, -5.4761, 24.9055, -18.1417, 18.9391, -26.2016, 8.36704, -28.1904, 2.19128, -28.0857, -17.2781 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40.2059, 22.0894 )
+
+[sub_resource type="OccluderPolygon2D" id=14]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -40.2915, -22.5098, 40.0286, -22.3813, 40.5427, 21.6984, -40.2915, 21.1843, -41.5766, -19.6825 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.9653, 30.016 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -31.5909, -29.5226, 31.559, -29.3289, 31.1716, 31.4966, -31.2035, 30.7217, -31.5909, -26.2295 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.9054, 30.4528 )
+
+[sub_resource type="OccluderPolygon2D" id=16]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -31.3268, -30.4096, 31.4357, -30.2159, 31.6295, 31.1907, -31.9079, 31.1907, -31.5205, -26.9228 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31.5706, 30.8821 )
+
+[sub_resource type="OccluderPolygon2D" id=17]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -32.1536, -30.0222, 31.3837, -30.4096, 31.19, 31.3844, -32.1536, 31.3844, -32.5411, -26.9228 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 93.0369, 18.9734 )
+
+[sub_resource type="OccluderPolygon2D" id=18]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -93.0625, -19.521, 92.9005, -19.9084, 93.6754, 19.0276, -93.0625, 18.4465, -93.45, -16.809 )
+
+[node name="Furniture" type="Node2D"]
 
 [node name="OfficeChair" type="Sprite" parent="." index="0"]
 
@@ -64,7 +130,7 @@ shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="OfficeChair" index="1"]
 
-occluder = SubResource( 4 )
+occluder = SubResource( 2 )
 light_mask = 1
 
 [node name="Crate" type="Sprite" parent="." index="1"]
@@ -87,12 +153,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crate/StaticBody2D" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Crate" index="1"]
 
 position = Vector2( 0.157776, 0 )
-occluder = SubResource( 5 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="Plant" type="Sprite" parent="." index="2"]
@@ -116,11 +182,173 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plant/StaticBody2D" index="0"]
 
 position = Vector2( 4.07813, -0.214638 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Plant" index="1"]
 
 occluder = SubResource( 6 )
+light_mask = 1
+
+[node name="Armchair" type="Sprite" parent="." index="3"]
+
+position = Vector2( 279.907, -1.08072 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1088, 1024, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Armchair" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Armchair/StaticBody2D" index="0"]
+
+shape = SubResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Armchair" index="1"]
+
+occluder = SubResource( 13 )
+light_mask = 1
+
+[node name="Aquarium" type="Sprite" parent="." index="4"]
+
+position = Vector2( 384.736, -1.08072 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 320, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Aquarium" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aquarium/StaticBody2D" index="0"]
+
+shape = SubResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Aquarium" index="1"]
+
+occluder = SubResource( 14 )
+light_mask = 1
+
+[node name="Oven" type="Sprite" parent="." index="5"]
+
+position = Vector2( 473.896, -3.24216 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1664, 640, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Oven" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven/StaticBody2D" index="0"]
+
+shape = SubResource( 9 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Oven" index="1"]
+
+occluder = SubResource( 15 )
+light_mask = 1
+
+[node name="Fountain" type="Sprite" parent="." index="6"]
+
+position = Vector2( 544.143, -2.16145 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1600, 704, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fountain" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fountain/StaticBody2D" index="0"]
+
+shape = SubResource( 10 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Fountain" index="1"]
+
+occluder = SubResource( 16 )
+light_mask = 1
+
+[node name="Kitchen" type="Sprite" parent="." index="7"]
+
+position = Vector2( 623.035, -2.16145 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 704, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Kitchen" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/StaticBody2D" index="0"]
+
+shape = SubResource( 11 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Kitchen" index="1"]
+
+occluder = SubResource( 17 )
+light_mask = 1
+
+[node name="Table" type="Sprite" parent="." index="8"]
+
+position = Vector2( 765.69, -1.62109 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 1152, 192, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D" index="0"]
+
+shape = SubResource( 12 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Table" index="1"]
+
+occluder = SubResource( 18 )
 light_mask = 1
 
 

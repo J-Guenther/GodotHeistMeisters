@@ -5,14 +5,18 @@ const MAX_DETECTION_RANGE = 320
 const RED = Color(1, .25, .25)
 const WHITE = Color(1, 1, 1)
 
-onready var Player = get_node("/root/Level1/Player") # todo Make this level neutral
+onready var Player = Global.Player
+
+func _ready():
+	add_to_group("npc")
 
 func _process(delta):
 	if Player_is_in_FOV_TOLERANCE() and Player_is_in_LOS():
 		$Torch.color = RED
 	else:
 		$Torch.color = WHITE
-	
+
+
 func Player_is_in_FOV_TOLERANCE():
 	var NPC_facing_direction = Vector2(1,0).rotated(global_rotation)
 	var direction_to_Player = (Player.position - global_position).normalized()
@@ -21,7 +25,7 @@ func Player_is_in_FOV_TOLERANCE():
 		return true
 	else:
 		return false
-		
+
 
 func Player_is_in_LOS():
 	var space = get_world_2d().direct_space_state
@@ -34,3 +38,11 @@ func Player_is_in_LOS():
 		return true
 	else:
 		return false
+
+
+func NightVision_mode():
+	$Torch.enabled = false
+
+
+func DarkVision_mode():
+	$Torch.enabled = true
